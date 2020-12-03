@@ -145,24 +145,27 @@ $YArray = $SlopeArray | ForEach-Object { $($_ -split ",")[1] }
 
 Write-Host "PART TWO: Number of trees encountered: " -ForegroundColor Red
 
+# Iterating through each possible slope
 for ( $i = 0; $i -lt $SlopeArray.Count; $i++ ) {
     # Start at top every time a slope is examined
     $X = 0
     $TreeCount = 0
 
+    # Look at each position
+    # For loop iterates through rows as Y, X iterates through columns
     for ( $Y = 0; $Y -lt $Slope.Count; $Y = $Y + $YArray[$i] ) {
-        $RowArray = $Slope[$Y].ToCharArray()
+        # $RowArray = $Slope[$Y].ToCharArray()
         
-        if ($RowArray[$X] -eq "#") {
+        if ($Slope[$Y][$X] -eq "#") {
             $TreeCount++
         }
 
         $X = $X + $XArray[$i]
 
         # Verify whether the next position is good
-        # If not, loop to beginning of line
-        if ($null -eq $RowArray[$x]) { 
-            $X = $X - $RowArray.Length
+        # If not, loop to position 0 + (X mod length)
+        if ($null -eq $Slope[$Y][$x]) { 
+            $X = $X % $Slope[$Y].Length
         }
     }
 
@@ -174,3 +177,4 @@ for ( $i = 0; $i -lt $SlopeArray.Count; $i++ ) {
 
 $FinalResults = Invoke-Expression -Command $($SlopeResults -join "*")
 Write-Host "Multiplying all the tree counts together: $FinalResults" -ForegroundColor Red
+
