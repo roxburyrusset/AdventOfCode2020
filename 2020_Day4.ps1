@@ -131,7 +131,7 @@ file, how many passports are valid?
 
 
 # Input
-$File = "day4_input.txt"
+$File = "2020_day4_input.txt"
 [string[]]$Passports = $(Get-Content -Path ".\Input\$File" -Raw) -split "`n`n"
 
 

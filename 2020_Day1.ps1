@@ -44,7 +44,7 @@ In your expense report, what is the product of the three entries that sum to 202
 
 # Data to examine
 # Assumes input text is in working directory
-$File = "day1_input.txt"
+$File = "2020_day1_input.txt"
 [int[]]$Numbers = Get-Content -Path ".\Input\$File"
 
 # Output

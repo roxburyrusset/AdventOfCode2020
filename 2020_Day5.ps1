@@ -61,7 +61,7 @@ What is the ID of your seat?
 
 
 # Input
-$File = "day5_input.txt"
+$File = "2020_day5_input.txt"
 [string[]]$Data = Get-Content -Path ".\Input\$File"
 
 # PART ONE

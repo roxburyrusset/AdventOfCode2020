@@ -48,7 +48,7 @@ How many passwords are valid according to the new interpretation of the policies
 
 # Get file
 # Assumes input text is in working directory
-$File = "day2_input.txt"
+$File = "2020_day2_input.txt"
 [string[]]$Content = Get-Content -Path ".\Input\$File"
 
 # String parsing

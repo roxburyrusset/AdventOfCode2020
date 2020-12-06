@@ -85,7 +85,7 @@ What do you get if you multiply together the number of trees encountered on each
 #>
 
 # Input
-$File = "day3_input.txt"
+$File = "2020_day3_input.txt"
 [string[]]$Slope = Get-Content -Path ".\Input\$File"
 
 
